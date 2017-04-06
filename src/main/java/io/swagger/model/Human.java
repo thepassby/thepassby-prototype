@@ -14,8 +14,8 @@ import io.swagger.annotations.ApiModelProperty;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-04-05T13:50:22.207Z")
 
 public class Human {
-	@JsonProperty("iid")
-	private Integer iid = null;
+	@JsonProperty("index")
+	private Integer index = null;
 
 	@JsonProperty("name")
 	private String name = null;
@@ -35,23 +35,23 @@ public class Human {
 	@JsonProperty("contact")
 	private List<Contact> contact = new ArrayList<Contact>();
 
-	public Human iid(Integer iid) {
-		this.iid = iid;
+	public Human index(Integer index) {
+		this.index = index;
 		return this;
 	}
 
 	/**
 	 * auto increase id.
 	 * 
-	 * @return iid
+	 * @return index
 	 **/
 	@ApiModelProperty(value = "auto increase id.")
-	public Integer getIid() {
-		return iid;
+	public Integer getIndex() {
+		return index;
 	}
 
-	public void setIid(Integer iid) {
-		this.iid = iid;
+	public void setIndex(Integer index) {
+		this.index = index;
 	}
 
 	public Human name(String name) {
@@ -187,7 +187,7 @@ public class Human {
 			return false;
 		}
 		Human human = (Human) o;
-		return Objects.equals(this.iid, human.iid) && Objects.equals(this.name, human.name)
+		return Objects.equals(this.index, human.index) && Objects.equals(this.name, human.name)
 				&& Objects.equals(this.birthday, human.birthday) && Objects.equals(this.sex, human.sex)
 				&& Objects.equals(this.lucky, human.lucky) && Objects.equals(this.occupation, human.occupation)
 				&& Objects.equals(this.contact, human.contact);
@@ -195,7 +195,7 @@ public class Human {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(iid, name, birthday, sex, lucky, occupation, contact);
+		return Objects.hash(index, name, birthday, sex, lucky, occupation, contact);
 	}
 
 	@Override
@@ -203,7 +203,7 @@ public class Human {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class Human {\n");
 
-		sb.append("    iid: ").append(toIndentedString(iid)).append("\n");
+		sb.append("    index: ").append(toIndentedString(index)).append("\n");
 		sb.append("    name: ").append(toIndentedString(name)).append("\n");
 		sb.append("    birthday: ").append(toIndentedString(birthday)).append("\n");
 		sb.append("    sex: ").append(toIndentedString(sex)).append("\n");

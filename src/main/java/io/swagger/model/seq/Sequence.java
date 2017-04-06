@@ -2,6 +2,8 @@ package io.swagger.model.seq;
 
 import java.util.Objects;
 
+import org.springframework.data.annotation.Id;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModelProperty;
@@ -12,6 +14,7 @@ import io.swagger.annotations.ApiModelProperty;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-04-05T14:40:45.991Z")
 
 public class Sequence {
+	@Id
 	@JsonProperty("id")
 	private String id = null;
 

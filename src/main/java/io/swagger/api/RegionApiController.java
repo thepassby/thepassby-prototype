@@ -25,14 +25,14 @@ public class RegionApiController implements RegionApi {
 		return new ResponseEntity<List<Region>>(HttpStatus.OK);
 	}
 
-	public ResponseEntity<Region> regionIidDelete(
-			@ApiParam(value = "get region of iid", required = true) @PathVariable("iid") Integer iid) {
+	public ResponseEntity<Region> regionindexDelete(
+			@ApiParam(value = "get region of index", required = true) @PathVariable("index") Integer index) {
 		// do some magic!
 		return new ResponseEntity<Region>(HttpStatus.OK);
 	}
 
-	public ResponseEntity<Object> regionIidPut(
-			@ApiParam(value = "get region of iid", required = true) @PathVariable("iid") Integer iid,
+	public ResponseEntity<Object> regionindexPut(
+			@ApiParam(value = "get region of index", required = true) @PathVariable("index") Integer index,
 			@ApiParam(value = "update instance", required = true) @RequestBody Region region) {
 		// do some magic!
 		return new ResponseEntity<Object>(HttpStatus.OK);

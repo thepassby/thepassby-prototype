@@ -12,8 +12,8 @@ import io.swagger.annotations.ApiModelProperty;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-04-05T13:50:22.207Z")
 
 public class Region {
-	@JsonProperty("iid")
-	private Integer iid = null;
+	@JsonProperty("index")
+	private Integer index = null;
 
 	@JsonProperty("level")
 	private Integer level = null;
@@ -30,23 +30,23 @@ public class Region {
 	@JsonProperty("description")
 	private String description = null;
 
-	public Region iid(Integer iid) {
-		this.iid = iid;
+	public Region index(Integer index) {
+		this.index = index;
 		return this;
 	}
 
 	/**
-	 * Get iid
+	 * Get index
 	 * 
-	 * @return iid
+	 * @return index
 	 **/
 	@ApiModelProperty(value = "")
-	public Integer getIid() {
-		return iid;
+	public Integer getIndex() {
+		return index;
 	}
 
-	public void setIid(Integer iid) {
-		this.iid = iid;
+	public void setIndex(Integer index) {
+		this.index = index;
 	}
 
 	public Region level(Integer level) {
@@ -153,14 +153,14 @@ public class Region {
 			return false;
 		}
 		Region region = (Region) o;
-		return Objects.equals(this.iid, region.iid) && Objects.equals(this.level, region.level)
+		return Objects.equals(this.index, region.index) && Objects.equals(this.level, region.level)
 				&& Objects.equals(this.name, region.name) && Objects.equals(this.code, region.code)
 				&& Objects.equals(this.parent, region.parent) && Objects.equals(this.description, region.description);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(iid, level, name, code, parent, description);
+		return Objects.hash(index, level, name, code, parent, description);
 	}
 
 	@Override
@@ -168,7 +168,7 @@ public class Region {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class Region {\n");
 
-		sb.append("    iid: ").append(toIndentedString(iid)).append("\n");
+		sb.append("    index: ").append(toIndentedString(index)).append("\n");
 		sb.append("    level: ").append(toIndentedString(level)).append("\n");
 		sb.append("    name: ").append(toIndentedString(name)).append("\n");
 		sb.append("    code: ").append(toIndentedString(code)).append("\n");

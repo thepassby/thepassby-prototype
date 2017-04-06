@@ -30,20 +30,20 @@ public interface RegionApi {
 	ResponseEntity<List<Region>> regionGet(
 			@NotNull @ApiParam(value = "the level of region", required = true) @RequestParam(value = "level", required = true) Integer level);
 
-	@ApiOperation(value = "delete a Region by iid", notes = "delete a Region by iid ", response = Region.class, tags = {})
+	@ApiOperation(value = "delete a Region by index", notes = "delete a Region by index ", response = Region.class, tags = {})
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "An Region that has been created", response = Region.class),
 			@ApiResponse(code = 200, message = "Unexpected error", response = Region.class) })
-	@RequestMapping(value = "/region/{iid}", produces = { "application/json" }, method = RequestMethod.DELETE)
-	ResponseEntity<Region> regionIidDelete(
-			@ApiParam(value = "get region of iid", required = true) @PathVariable("iid") Integer iid);
+	@RequestMapping(value = "/region/{index}", produces = { "application/json" }, method = RequestMethod.DELETE)
+	ResponseEntity<Region> regionindexDelete(
+			@ApiParam(value = "get region of index", required = true) @PathVariable("index") Integer index);
 
-	@ApiOperation(value = "update a region with iid", notes = "update a region with iid ", response = Object.class, tags = {})
+	@ApiOperation(value = "update a region with index", notes = "update a region with index ", response = Object.class, tags = {})
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "An Region of update result", response = Object.class),
 			@ApiResponse(code = 200, message = "Unexpected error", response = Object.class) })
-	@RequestMapping(value = "/region/{iid}", produces = { "application/json" }, method = RequestMethod.PUT)
-	ResponseEntity<Object> regionIidPut(
-			@ApiParam(value = "get region of iid", required = true) @PathVariable("iid") Integer iid,
+	@RequestMapping(value = "/region/{index}", produces = { "application/json" }, method = RequestMethod.PUT)
+	ResponseEntity<Object> regionindexPut(
+			@ApiParam(value = "get region of index", required = true) @PathVariable("index") Integer index,
 			@ApiParam(value = "update instance", required = true) @RequestBody Region region);
 
 	@ApiOperation(value = "regions", notes = "region such as country, city, street, number. ", response = Region.class, tags = {

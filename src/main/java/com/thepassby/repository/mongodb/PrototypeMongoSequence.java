@@ -23,10 +23,10 @@ public class PrototypeMongoSequence {
 	MongoTemplate mongoTemplate;
 	
 	// increase id
-	public Integer getNextId(String key) {
-		Query query = new Query(Criteria.where("collName").is(key));
+	public Integer getNextIndex(String key) {
+		Query query = new Query(Criteria.where("key").is(key));
 		Update update = new Update();
-		update.inc("seqId", 1);
+		update.inc("value", 1);
 		FindAndModifyOptions options = new FindAndModifyOptions();
 		options.upsert(true);
 		options.returnNew(true);

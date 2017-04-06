@@ -32,13 +32,13 @@ public interface HumanApi {
 			@ApiParam(value = "name of human") @RequestParam(value = "name", required = false) String name,
 			@ApiParam(value = "sex of human") @RequestParam(value = "sex", required = false) String sex);
 
-	@ApiOperation(value = "update lucky by iid", notes = "update lucky by iid ", response = Human.class, tags = {})
+	@ApiOperation(value = "update lucky by index", notes = "update lucky by index ", response = Human.class, tags = {})
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "An Human that has been created", response = Human.class),
 			@ApiResponse(code = 200, message = "Unexpected error", response = Human.class) })
-	@RequestMapping(value = "/human/{iid}", produces = { "application/json" }, method = RequestMethod.PUT)
-	ResponseEntity<Human> humanIidPut(
-			@ApiParam(value = "iid of human", required = true) @PathVariable("iid") Integer iid,
+	@RequestMapping(value = "/human/{index}", produces = { "application/json" }, method = RequestMethod.PUT)
+	ResponseEntity<Human> humanindexPut(
+			@ApiParam(value = "index of human", required = true) @PathVariable("index") Integer index,
 			@NotNull @ApiParam(value = "the new lucky", required = true) @RequestParam(value = "lucky", required = true) Double lucky);
 
 	@ApiOperation(value = "create a human instance", notes = "this is a description of create human instance ", response = Human.class, tags = {})

@@ -27,8 +27,8 @@ public class HumanApiController implements HumanApi {
 		return new ResponseEntity<List<Region>>(HttpStatus.OK);
 	}
 
-	public ResponseEntity<Human> humanIidPut(
-			@ApiParam(value = "iid of human", required = true) @PathVariable("iid") Integer iid,
+	public ResponseEntity<Human> humanindexPut(
+			@ApiParam(value = "index of human", required = true) @PathVariable("index") Integer index,
 			@NotNull @ApiParam(value = "the new lucky", required = true) @RequestParam(value = "lucky", required = true) Double lucky) {
 		// do some magic!
 		return new ResponseEntity<Human>(HttpStatus.OK);

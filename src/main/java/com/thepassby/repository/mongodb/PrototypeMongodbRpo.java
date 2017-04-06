@@ -47,7 +47,6 @@ public class PrototypeMongodbRpo {
 	public <T> List<T> find(Map<String, String> conditions, Class<T> clazz) {
 		Criteria c = null;
 		
-		int i = 0;
 		for(Entry<String, String> e : conditions.entrySet()) {
 			if(c == null) {
 				c = Criteria.where(e.getKey()).regex(e.getValue());
@@ -63,11 +62,12 @@ public class PrototypeMongodbRpo {
 	}
 	
 	// 删除
-	public <T> int delete(Integer iid, Class<T> clazz) {
+	public <T> int delete(Integer index, Class<T> clazz) {
 		WriteResult r = mongoTemplate.remove(
-				Query.query(Criteria.where("iid").is(iid)), 
+				Query.query(Criteria.where("index").is(index)), 
 				clazz.getSimpleName());
 		
+		log.info("r.getUpsertedId(): " + r.getUpsertedId() + ", r.getN(): " + r.getN());
 		return r.getN();
 	}
 }
